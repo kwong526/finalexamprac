@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/createCardStyles.css" />
+    <title>Create Card Page</title>
+  </head>
+  <body>
+    <h1>Create your DevCard</h1>
+    <form action="/createcard" method="POST">
+      <div class="form-group">
+        <input type="text" id="fullName" name="fullName" placeholder="Your Full Name"/>
+      </div>
+      <div class="form-group">
+        <input type="text" id="aboutMe" name="abougtMe" placeholder="About Me"/>
+      </div>
+      <div class="form-group">
+        <input type="text" id="Git" name="Git" placeholder="Github URL"/>
+      </div>
+      <div class="form-group">
+        <input type="text" id="twitter" name="twitter" placeholder="Twitter URL"/>
+      </div>
+      <div class="form-group">
+        <input type="text" id="favBooks" name="favBooks" placeholder="Favourite Books (Separate by comma)"/>
+      </div>
+      
+      <h3>Technologies you Know:</h3>
+      <ul class="tech-checkbox">
+        <% technologies=["HTML", "CSS", "JS", "Git", "React", "Node.js"] %> 
+        <% technologies.forEach(function (technology) { %>
+          <li class="tech-checkbox-item">
+            <input type="checkbox" id=<%= technology %> name=<%= technology %>> 
+            <label for=<%= technology %>> <%= technology %></label><br />
+          </li>
+          <% }) %>
+        </ul>
+      <button type="submit" class="btn btn-primary">Create Site</button>
+    </form>
+
+  </body>
+</html>
